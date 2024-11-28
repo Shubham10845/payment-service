@@ -18,8 +18,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class PaymentController {
     PaymentService paymentService;
     @PostMapping("/create")
-    public ResponseEntity<PaymentResponseDto> initiatePayment(@RequestBody PaymentRequestDto paymentRequestDto) throws StripeException {
-        PaymentResponseDto paymentResponseDto = paymentService.initiatePayment(paymentRequestDto);
+    public ResponseEntity<PaymentResponseDto> createPayment(@RequestBody PaymentRequestDto paymentRequestDto) throws StripeException {
+        PaymentResponseDto paymentResponseDto = paymentService.createPayment(paymentRequestDto);
         return new ResponseEntity<>(paymentResponseDto, HttpStatus.OK);
     }
 

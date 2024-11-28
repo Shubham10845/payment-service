@@ -11,7 +11,7 @@ import org.springframework.stereotype.Service;
 @AllArgsConstructor
 public class PaymentService {
     PaymentGateway paymentGateway;
-    public PaymentResponseDto initiatePayment(PaymentRequestDto paymentRequestDto) throws StripeException {
+    public PaymentResponseDto createPayment(PaymentRequestDto paymentRequestDto) throws StripeException {
         return paymentGateway.createPayment(paymentRequestDto.paymentMethodId(), paymentRequestDto.amount());
     }
 }
